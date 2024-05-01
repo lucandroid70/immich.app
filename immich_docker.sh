@@ -6,17 +6,19 @@ user="$USER"
 # Installa sudo se non è già installato
 apt update
 apt upgrade -y
+apt install htop bmon nload  iftop  -y
 apt install -y sudo
 
 # Aggiunge l'utente al gruppo sudo
 sudo usermod -aG sudo "$user"
 
 # Modifica il file sudoers per concedere i privilegi di sudo all'utente
+echo "Modifica il file sudoers per concedere i privilegi di sudo all'utente"
+
 echo "$user ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 
-
-
+read -p "Premi enter per aggiunge i repository Docker e installa l'ultima versione di Immich!"
 
 sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common sudo -y
 
@@ -31,3 +33,7 @@ sudo apt install docker-ce -y
 sudo apt install docker-compose -y
 
 curl -o- https://raw.githubusercontent.com/immich-app/immich/main/install.sh | sudo bash
+
+
+
+
