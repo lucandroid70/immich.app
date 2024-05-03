@@ -1,5 +1,5 @@
 #!/bin/bash
-#Creato da Luca Droi :)
+# Creato da Luca Droi :)
 # Funzione per l'installazione su Debian
 install_debian() {
     read -p "Premi enter per aggiungere i repository Docker e installare l'ultima versione di Immich!"
